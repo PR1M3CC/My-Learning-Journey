@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Mass Index Calculator</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            background-color: #212121;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: greenyellow;
+        }
+
+        nav p {
+            color: rgb(68, 0, 255);
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        nav p:hover {
+            cursor: default;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 25px;
+            padding-top: 25px;
+            color: rgb(68, 0, 255);
+            font-style: italic;
+        }
+
+        .main {
+            padding-left: 30px;
+            font-style: italic;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form p {
+            margin-top: 10px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid black;
+            color: white;
+            padding: 10px;
+            background-color: #918c8c34;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.664);
+        }
+
+        .submit {
+            margin-top: 10px;
+            background-color: orange;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .submit:hover {
+            background-color: rgba(255, 166, 0, 0.705);
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+        .guide li{
+font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <p>First 4 mini projects in JS</p>
+        <a href="/Home/index.html">Home</a>
+    </nav>
+    <div class="main">
+        <h1>Body Mass Index Calculator</h1>
+        <form>
+            <p>Enter your height (cm)</p>
+            <input type="number" name="height" id="height" placeholder="Enter your height in cm">
+            <p>Enter your weight (kg)</p>
+            <input type="number" name="weight" id="weight" placeholder="Enter your weight in kg">
+            <input type="submit" class="submit" id="submit">
+            <div class="result" id="result"></div>
+        </form>
+        <div class="guide">
+            <h1>BMI Categories:</h1>
+            <ul>
+                <li><strong>Underweight:</strong>A BMI of less than 18.5</li>
+                <li><strong>Healthy:</strong>A BMI of 18.5 to 24.9</li>
+                <li><strong>Overweight:</strong>A BMI of 25 to 29.9</li>
+                <li><strong>Obese Class 1:</strong>A BMI of 30 to 34.9</li>
+                <li><strong>Obese clas 2:</strong>A BMI of 35 to 39.9</li>
+                <li><strong>Severe obesity:</strong>A BMI of 40 or more</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            // Get the height and weight values
+            const heightCm = parseFloat(document.getElementById('height').value);
+            const weightKg = parseFloat(document.getElementById('weight').value);
+
+            if (isNaN(heightCm) || isNaN(weightKg) || heightCm <= 0 || weightKg <= 0) {
+                alert('Please enter valid height and weight values!');
+                return;
+            }
+
+            // Convert height from cm to meters
+            const heightM = heightCm / 100;
+
+            // Calculate BMI
+            const bmi = weightKg / (heightM * heightM);
+
+            // Display the result
+            const result = document.getElementById('result');
+            result.innerHTML = `Your BMI is <strong>${bmi.toFixed(2)}</strong>`;
+        });
+    </script>
+</body>
+
+</html>

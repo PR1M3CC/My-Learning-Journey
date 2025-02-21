@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body{
+        margin: 0;
+        background-color: #212121;
+        color: white;
+    }
+        nav{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 40px;
+        padding-right: 40px;
+        background-color: greenyellow;
+    }
+    nav p{
+        color: rgb(68, 0, 255);
+        font-size: 25px;
+        font-style: italic;
+    }
+    nav p:hover{
+        cursor: default;
+    }
+    nav a{
+        text-decoration: none;
+        font-size: 25px;
+        padding-top: 25px;
+        color: rgb(68, 0, 255);
+        font-style: italic;
+    }
+    .main{
+        padding-left: 30px;
+        font-style: italic;
+    }
+       .button {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+
+        .buttons {
+            gap: 10px;
+            position: relative;
+            top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #purple {
+            background-color: purple;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #grey {
+            background-color: grey;
+        }
+
+        #aqua {
+            background-color: aqua;
+        }
+
+        #pink {
+            background-color: pink;
+        }
+
+        .button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <p>First 4 mini projects in JS</p>
+        <a href="/Home/index.html">Home</a>
+    </nav>
+   <div class="main">
+    <h1>Webpage Color Changer</h1>
+    <h3>Click on the buttons below to change the color of the page</h3>
+    <div class="buttons">
+        <button class="button" id="purple"></button>
+        <button class="button" id="red"></button>
+        <button class="button" id="yellow"></button>
+        <button class="button" id="grey"></button>
+        <button class="button" id="aqua"></button>
+        <button class="button" id="pink"></button>
+    </div>
+</div>
+    <script>
+        let body = document.querySelector('body')
+        let buttons = document.querySelectorAll('.button')
+        buttons.forEach((button) => {
+            addEventListener('click', function (e) {
+                if (e.target.id === 'purple') {
+                    body.style.backgroundColor = e.target.id
+                    body.style.color = 'white'
+                }
+                if (e.target.id === 'yellow') {
+                    body.style.backgroundColor = e.target.id
+                    body.style.color = 'black'
+                }
+                if (e.target.id === 'grey') {
+                    body.style.backgroundColor = e.target.id
+                    body.style.color = 'white'
+                }
+                if (e.target.id === 'pink') {
+                    body.style.backgroundColor = e.target.id
+                    body.style.color = 'black'
+                }
+                if (e.target.id === 'red') {
+                    body.style.backgroundColor = e.target.id
+                    body.style.color = 'white'
+                }
+                if (e.target.id === 'aqua') {
+                    body.style.backgroundColor = e.target.id
+                    body.style.color = 'black'
+                }
+            })
+        })
+        
+    </script>
+</body>
+
+</html>

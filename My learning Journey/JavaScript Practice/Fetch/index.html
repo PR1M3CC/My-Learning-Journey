@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api Request</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: white;
+      }
+      .card {
+        background-color: bisque;
+        display: flex;
+        width: 400px;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        box-shadow: 0 10px 12px 0 rgba(253, 38, 38, 0.2);
+        height: 600px;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My first time requesting an api</h1>
+    <div class="card">
+      <img src="" id="dp" alt="" />
+      <h3 id="name"></h3>
+      <span>Email: <a href="" id="email"></a></span>
+    </div>
+    <script>
+      let requestUrl = 'https://randomuser.me/api/'
+      let picture = document.querySelector('#dp')
+      let name = document.querySelector('#name')
+      let email = document.querySelector('#email')
+      fetch(requestUrl)
+      .then((response)=>{
+          return response.json()
+      })
+      .then((data)=>{
+        picture.src = data.results[0].picture.large
+        name.innerHTML = `${data.results[0].name.title} ${data.results[0].name.first} ${data.results[0].name.last}`
+        email.href = data.results[0].email
+        email.innerHTML = `${data.results[0].email}`
+      })
+      .catch(()=>{
+        console.log('Could not retrieve info');
+      })
+    </script>
+  </body>
+</html>

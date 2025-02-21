@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InstaWeather</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header class="input-container">
+          <input type="text" class="city-input" placeholder="Search City" autocomplete="nope" />
+          <button class="input-btn">
+            <span>
+              <img src="../assets/search.svg" alt="" />
+            </span>
+          </button>
+        </header>
+
+        <section class="weather-info" style="display: none;">
+          <div class="location-date-container">
+            <div class="location">
+              <span>
+                <img width="35px" src="../assets/location.svg" alt="" />
+              </span>
+              <h4 class="country-txt">Pakistan</h4>
+            </div>
+            <h5 class="current-date-txt regular-txt">Sat, 15 Feb</h5>
+          </div>
+          <div class="weather-summary-container">
+            <img class="main-img" src="../assets/weather/clouds.svg" alt="" />
+            <div class="weather-summary-info">
+              <h1 class="temp-text">29°C</h1>
+              <h3 class="condition-txt regular-txt">Cloudy</h3>
+            </div>
+          </div>
+          <div class="current-conditions">
+            <div class="humidity">
+              <img width="35px" src="../assets/humidity.svg" alt="" />
+              <span class="small-txt">Humidity</span>
+              <span class="humidity-info">74%</span>
+            </div>
+            <div class="wind-speed">
+              <img width="35px" src="../assets/wind.svg" alt="" />
+              <span class="small-txt">Wind Speed</span>
+              <span class="windspeed-info">4.12 M/s</span>
+            </div>
+          </div>
+          <section class="forecast">
+            <div class="forecast-container">
+              <div class="card" id="1">
+                <p>Aug 09</p>
+                <img
+                  class="card-img"
+                  src="../assets/weather/clear.svg"
+                  alt=""
+                />
+                <p>28°C</p>
+              </div>
+              <div class="card" id="2">
+                <p>Aug 10</p>
+                <img class="card-img" src="../assets/weather/snow.svg" alt="" />
+                <p>28°C</p>
+              </div>
+              <div class="card" id="3">
+                <p>Aug 11</p>
+                <img
+                  class="card-img"
+                  src="../assets/weather/atmosphere.svg"
+                  alt=""
+                />
+                <p>28°C</p>
+              </div>
+              <div class="card" id="4">
+                <p>Aug 12</p>
+                <img class="card-img" src="../assets/weather/rain.svg" alt="" />
+                <p>28°C</p>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="search-city section-message">
+          <img src="../assets/message/search-city.png" alt="">
+          <div>
+            <h1>Search City</h1>
+            <h4 class="regular-txt">Find out the weather conditions of any city in the world</h4>
+          </div>
+        </section>
+        <section class="not-found section-message" style="display: none;">
+          <img src="../assets/message/not-found.png" alt="">
+          <div>
+            <h1>Not Found</h1>
+            <h4 class="regular-txt">Please make sure you have typed the name correctly, if yes then this city might not be in our data</h4>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>

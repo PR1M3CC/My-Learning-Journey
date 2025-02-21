@@ -1,0 +1,359 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  color: white;
+}
+body {
+  background-color: black;
+}
+.main {
+  height: 80vh;
+  background-image: url(assets/images/background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: max(1200px, 100vw);
+  overflow: hidden;
+}
+.main .filter {
+  background-color: black;
+  height: 80vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  opacity: 0.69;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80vw;
+  height: 62px;
+  padding-top: 15px;
+  margin: auto;
+  align-items: center;
+}
+nav img {
+  width: 9.25rem;
+  height: 2.5rem;
+  z-index: 1;
+}
+nav button {
+  background-color: rgb(229, 9, 20);
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  padding-left: 20px;
+  height: 33px;
+  padding-right: 20px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 77px);
+  text-align: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 20px;
+}
+.hero > :nth-child(1) {
+  font-weight: 900;
+  font-size: 56px;
+  text-align: center;
+  max-width: 600px;
+}
+.hero > :nth-child(2) {
+  font-weight: 500;
+  text-align: center;
+  font-size: 20px;
+}
+.hero > :nth-child(3) {
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+}
+.separation {
+  height: 5px;
+  background-color: rgb(87, 87, 87);
+  position: relative;
+}
+.redbtn {
+  background-color: rgb(229, 9, 20);
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+  width: 204.734px;
+  height: 54px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 500;
+}
+input {
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: rgba(23, 23, 23, 0.6);
+  border-radius: 5px;
+  width: 341.266px;
+  height: 24px;
+  border: 1px solid grey;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 85vw;
+  color: white;
+  padding-top: 30px;
+  font-weight: 500;
+  gap: 16px;
+  font-size: 24px;
+}
+.selection {
+  display: flex;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  gap: 23px;
+}
+select {
+  background-color: rgba(23, 23, 23, 0.6);
+  padding: 11px;
+  padding-right: 20px;
+  border-radius: 6px;
+}
+select:focus,
+input:focus {
+  outline: none;
+}
+.movies {
+  display: flex;
+  min-width: 1500px;
+  overflow: hidden;
+  justify-content: space-around;
+}
+.movies img{
+  transition: transform 0.3s ease-in-out;
+}
+.movies img:hover{
+  transform:scale(1.05);
+  transition: transform 0.5s ease-in-out;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.box {
+  height: 250px;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+}
+.box > :nth-child(1) {
+  font-weight: 500;
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
+.box > :nth-child(2) {
+  font-weight: 400;
+  font-size: 14px;
+}
+.box .doodle {
+  position: absolute;
+  bottom: 0;
+  padding-right: 5px;
+  right: 0;
+}
+button:hover {
+  background-color: rgb(207, 48, 56);
+}
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.faq {
+  width: 100%;
+}
+
+.faq button {
+  background-color: rgb(37, 37, 37);
+  text-align: left;
+  border: 0;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.faq button:hover {
+  background-color: rgb(71, 71, 71);
+}
+
+.faq img {
+  width: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.answer {
+    background-color: rgb(24, 24, 24);
+    padding: 0 20px; /* Start with padding but no height */
+    font-size: 18px;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+.answer.open {
+    max-height: 300px; /* Adjust based on content size */
+    padding: 20px;
+    opacity: 1;
+}
+
+/* Rotation for plus icon */
+.faq button.active img {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.member {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+.membertext p {
+  font-size: 16px;
+  font-weight: 400;
+}
+.membertext {
+  display: flex;
+  justify-content: center;
+}
+.footer {
+  display: grid;
+  margin: auto;
+  width: fit-content;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.cols {
+  width: 20vw;
+  display: flex;
+  font-size: 14px;
+  line-height: 21px;
+  gap: 20px;
+  flex-direction: column;
+}
+.cols p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+.cols a {
+  color: #b3b3b3;
+}
+footer {
+  width: 80vw;
+  margin: auto;
+}
+footer select {
+  width: 150px;
+  padding: 7px;
+  margin-top: 30px;
+}
+@media (max-width: 1300px) {
+  .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .footer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .cols {
+    width: 26.66vw;
+  }
+}
+@media (max-width: 950px) {
+  .features {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cols {
+    width: 40vw;
+  }
+}
+@media (max-width: 650px) {
+  .footer {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .cols {
+    width: 80vw;
+  }
+  .hero > :nth-child(1) {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    max-width: 600px;
+  }
+  .hero > :nth-child(2) {
+    font-weight: 400;
+    text-align: center;
+    font-size: 16px;
+  }
+  .hero > :nth-child(3) {
+    font-weight: 400;
+    text-align: center;
+    font-size: 16px;
+  }
+  .hero input {
+    width: 250px;
+  }
+  nav img {
+    width: 7.25rem;
+    height: 1.5rem;
+  }
+  .selection > :nth-child(2){
+   width: 142.5px;
+  }
+  .questions button{
+    font-size: 19px;
+
+  }
+  .questions button img{
+    width: 30px;
+  }
+}
+hr {
+  border: 3px solid grey;
+}

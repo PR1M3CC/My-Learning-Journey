@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<style>
+    body {
+        margin: 0;
+        background-color: #212121;
+        color: white;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 40px;
+        padding-right: 40px;
+        background-color: greenyellow;
+    }
+
+    nav p {
+        color: rgb(68, 0, 255);
+        font-size: 25px;
+        font-style: italic;
+    }
+
+    nav p:hover {
+        cursor: default;
+    }
+
+    nav a {
+        text-decoration: none;
+        font-size: 25px;
+        padding-top: 25px;
+        color: rgb(68, 0, 255);
+        font-style: italic;
+    }
+
+    .main {
+        padding-left: 30px;
+        font-style: italic;
+    }
+
+    .clock {
+        background-color: orange;
+        display: flex;
+        position: relative;
+        font-size: 50px;
+        font-weight: 600;
+        align-items: center;
+        top: 80px;
+        border-radius: 15px;
+        margin: auto;
+        justify-content: center;
+        width: 400px;
+        height: 150px;
+        color: black;
+    }
+</style>
+
+<body>
+    <nav>
+        <p>First 4 mini projects in JS</p>
+        <a href="/Home/index.html">Home</a>
+    </nav>
+    <div class="main">
+        <h1>Digital Clock</h1>
+    </div>
+    <div class="clock">
+
+    </div>
+
+    <script>
+        let clock = document.querySelector('.clock')
+        setInterval(()=> {
+        let time = new Date()
+        clock.innerHTML = time.toLocaleTimeString()
+        }, 1000)
+    </script>
+</body>
+
+</html>

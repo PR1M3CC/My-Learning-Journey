@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broken Calculator</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            background-color: #212121;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: greenyellow;
+        }
+
+        nav p {
+            color: rgb(68, 0, 255);
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        nav p:hover {
+            cursor: default;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 25px;
+            padding-top: 25px;
+            color: rgb(68, 0, 255);
+            font-style: italic;
+        }
+
+        .main {
+            padding-left: 30px;
+            font-style: italic;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form p {
+            margin-top: 10px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid black;
+            color: white;
+            padding: 10px;
+            background-color: #918c8c34;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.664);
+        }
+
+        .submit {
+            margin-top: 10px;
+            background-color: orange;
+            font-size: 20px;
+            width: 200px;
+            font-weight: 500;
+        }
+
+        .submit:hover {
+            background-color: rgba(255, 166, 0, 0.705);
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <p>First 4 mini projects in JS</p>
+        <a href="/Home/index.html">Home</a>
+    </nav>
+    <div class="main">
+        <h1>Broken Calculator</h1>
+        <form>
+            <p>Enter the first number</p>
+            <input type="number" name="firstNum" id="num1" placeholder="Enter the first number">
+            <p>Enter the second number</p>
+            <input type="number" name="secNum" id="num2" placeholder="Enter the second number">
+            <p>What operation would you like to perform?</p>
+            <div class="operations"><input type="submit" class="submit" id="multiply" value="Multiply(*)">
+                <input type="submit" class="submit" id="add" value="Add(+)">
+                <input type="submit" class="submit" id="subtract" value="Subtract(-)">
+                <input type="submit" class="submit" id="divide" value="Divide(/)">
+            </div>
+            <div class="result" id="result"></div>
+        </form>
+        <h1>Note!</h1>
+        <p>This Calculator doesn't always provide the correct answers because it is designed in such a way that it will
+            perform an incorrect operation with a probability of 3 out of 10. <strong>Use only for fun!!!</strong></p>
+    </div>
+    <script>
+        // Function for calculation:
+        function calculate(operation) {
+            let num1 = parseFloat(document.querySelector('#num1').value)
+            let num2 = parseFloat(document.querySelector('#num2').value)
+            let result = document.getElementById('result')
+            let random = Math.random();
+            let finalResult;
+            if (random < 0.3) {
+                if (operation === 'multiply') {
+                    finalResult = num1 / num2
+                }
+                else if (operation === 'add') {
+                    finalResult = num1 - num2
+                }
+                else if (operation === 'subtract') {
+                    finalResult = num1 + num2
+                }
+                else if (operation === 'divide') {
+                    finalResult = num1 * num2
+                }
+                result.innerHTML = `Result is <strong>${finalResult}</strong> (Incorrect!)`;
+            }
+            else if (random > 0.3) {
+                if (operation === 'multiply') {
+                    finalResult = num1 * num2
+                }
+                else if (operation === 'add') {
+                    finalResult = num1 + num2
+                }
+                else if (operation === 'subtract') {
+                    finalResult = num1 - num2
+                }
+                else if (operation === 'divide') {
+                    finalResult = num1 / num2
+                }
+                result.innerHTML = `Result is <strong>${finalResult}</strong>`;
+            }
+        }
+        // adding Event listeners to the buttons:
+        document.getElementById('multiply').addEventListener('click', (event) => {
+            event.preventDefault()
+            calculate('multiply')
+        })
+        document.getElementById('add').addEventListener('click', (event) => {
+            event.preventDefault()
+            calculate('add')
+        })
+        document.getElementById('subtract').addEventListener('click', (event) => {
+            event.preventDefault()
+            calculate('subtract')
+        })
+        document.getElementById('divide').addEventListener('click', (event) => {
+            event.preventDefault()
+            calculate('divide')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Page Colors</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #212121;
+        color: white;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 40px;
+        padding-right: 40px;
+        background-color: greenyellow;
+      }
+
+      nav p {
+        color: rgb(68, 0, 255);
+        font-size: 25px;
+        font-style: italic;
+      }
+
+      nav p:hover {
+        cursor: default;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-size: 25px;
+        padding-top: 25px;
+        color: rgb(68, 0, 255);
+        font-style: italic;
+      }
+
+      .main {
+        padding-left: 30px;
+        font-style: italic;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        gap: 50px;
+      }
+
+      .btn {
+        margin-top: 10px;
+        background-color: orange;
+        font-size: 20px;
+        width: 200px;
+        height: 40px;
+        border-radius: 15px;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      .btn:hover {
+        background-color: rgba(255, 166, 0, 0.705);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <p>First 4 mini projects in JS</p>
+      <a href="/Home/index.html">Home</a>
+    </nav>
+    <div class="main">
+      <h1>Webpage Color Changer</h1>
+      <div class="buttons">
+        <button class="btn" id="start">Start</button>
+        <button class="btn" id="stop">Stop</button>
+      </div>
+    </div>
+    <script>
+      // generate Random Color
+      let randomColor = function () {
+        let hex = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += hex[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      };
+      let intervalId;
+      function changeBgColor() {
+        document.body.style.backgroundColor = randomColor();
+      }
+      let startChangingColor = function () {
+        if (!intervalId) {
+          intervalId = setInterval(changeBgColor, 1000);
+        }
+      };
+      document
+        .querySelector("#start")
+        .addEventListener("click", startChangingColor);
+      let stopChangingColor = function () {
+        clearInterval(intervalId);
+        intervalId = null;
+      };
+      document
+        .querySelector("#stop")
+        .addEventListener("click", stopChangingColor);
+    </script>
+  </body>
+</html>
