@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>InstaWeather</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <main>
       <div class="container">
-        <header class="input-container">
-          <input type="text" class="city-input" placeholder="Search City" autocomplete="nope" />
-          <button class="input-btn">
-            <span>
+        <div class="input-container">
+            <input
+              type="text"
+              class="city-input"
+              placeholder="Search City"
+              autocomplete="nope"
+            />
+          <div class="icon">
+            <button class="input-btn">
               <img src="../assets/search.svg" alt="" />
-            </span>
-          </button>
-        </header>
+            </button>
+          </div>
+        </div>
 
-        <section class="weather-info" style="display: none;">
+        <section class="weather-info" style="display: none">
           <div class="location-date-container">
             <div class="location">
               <span>
@@ -38,12 +47,17 @@
           </div>
           <div class="current-conditions">
             <div class="humidity">
-              <img width="35px" src="../assets/humidity.svg" alt="" />
+              <img
+                class="humidity-pic"
+                width="35px"
+                src="../assets/humidity.svg"
+                alt=""
+              />
               <span class="small-txt">Humidity</span>
               <span class="humidity-info">74%</span>
             </div>
             <div class="wind-speed">
-              <img width="35px" src="../assets/wind.svg" alt="" />
+              <img class="wind" width="35px" src="../assets/wind.svg" alt="" />
               <span class="small-txt">Wind Speed</span>
               <span class="windspeed-info">4.12 M/s</span>
             </div>
@@ -82,17 +96,22 @@
           </section>
         </section>
         <section class="search-city section-message">
-          <img src="../assets/message/search-city.png" alt="">
+          <img src="../assets/message/search-city.png" alt="" />
           <div>
             <h1>Search City</h1>
-            <h4 class="regular-txt">Find out the weather conditions of any city in the world</h4>
+            <h4 class="regular-txt">
+              Find out the weather conditions of any city in the world
+            </h4>
           </div>
         </section>
-        <section class="not-found section-message" style="display: none;">
-          <img src="../assets/message/not-found.png" alt="">
+        <section class="not-found section-message" style="display: none">
+          <img src="../assets/message/not-found.png" alt="" />
           <div>
             <h1>Not Found</h1>
-            <h4 class="regular-txt">Please make sure you have typed the name correctly, if yes then this city might not be in our data</h4>
+            <h4 class="regular-txt">
+              Please make sure you have typed the name correctly, if yes then
+              this city might not be in our data
+            </h4>
           </div>
         </section>
       </div>

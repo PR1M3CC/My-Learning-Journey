@@ -47,13 +47,12 @@ main .container{
 .city-input{
     padding: 10px 16px;
     border-radius:99px;
-    width: 250px;
+    min-width: 250px;
     border: 3px solid transparent;
     background: rgb(0, 0, 0, 0.15);
     outline: none;
     font-weight: 500;
     transition: 0.25s border;
-    position: relative;
     padding-right: 45px;
     color: rgb(255, 255, 255, 0.75);
 }
@@ -69,14 +68,16 @@ main .container{
     position: absolute;
     color: rgb(255, 255, 255, 0.75);
     top: 12px;
-    right: 110px;
     cursor: pointer;
+    position: relative;
+    right: 30px;
 }
 .weather-info{
     color: white;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    height: 350px;
 }
 .location-date-container{
     display: flex;
@@ -108,11 +109,8 @@ main .container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 510px;
-    margin-bottom: 100px;
-}
-.humidity{
-    color: white;
+    width: 115%;
+    margin-bottom: 80px;
 }
 .humidity-info{
     font-weight: 500;
@@ -120,6 +118,13 @@ main .container{
     position: relative;
     right: 53px;
     top: 10px;
+}
+.humidity{
+    min-width: 150px;
+}
+.wind-speed{
+    min-width: 150px;
+
 }
 .windspeed-info{
     font-weight: 500;
@@ -132,8 +137,11 @@ main .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 120px;
+    width: 100%;
     gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .card{
     min-width: 80px;
@@ -173,3 +181,24 @@ background: rgb(255, 255, 255, 0.15);
     margin-top: 10%;
     color: white;
 }
+@media screen and (max-width: 530px) {
+    main .container {
+        max-width: 95vw;
+    }
+    .humidity-info, .windspeed-info{
+        font-size: 15px;
+    }
+    .humidity-pic, .wind{
+        width: 30px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .section-message img{
+        height: 270px;
+        width: fit-content;
+    }
+    .humidity-info, .windspeed-info{
+        font-size: 10px;
+    }
+}
+
