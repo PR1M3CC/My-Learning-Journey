@@ -209,7 +209,7 @@ background: rgb(255, 255, 255, 0.15);
 @media screen and (max-height: 780px) {
     main .container {
         top: 20px;
-        height: 550px;
+        height: 98vh;
     }
     .current-conditions{
         margin-bottom: -8px;
@@ -218,5 +218,8 @@ background: rgb(255, 255, 255, 0.15);
 @media screen and (max-height: 600px) {
     main .container {
         top: 5px;
+    }
+    .weather-summary-container{
+        height: 130px;
     }
 }
