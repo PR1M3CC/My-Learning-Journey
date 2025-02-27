@@ -106,12 +106,13 @@ choices.forEach((choice) => {
     let classToApply = "incorrect";
     if (selectedAnswer == currentQuestion.answer) {
       classToApply = "correct";
+      incrementScore(CORRECT_BONUS); // ✅ Increase score only when correct
     } else {
       // Find the correct choice and apply the 'correct' class
       const correctChoice = choices.find(
         (choice) => choice.dataset["number"] == currentQuestion.answer
       );
-      correctChoice.parentElement.classList.add("correct"); // Add green border
+      correctChoice.parentElement.classList.add("correct"); // Highlight correct answer
     }
 
     // Apply the incorrect/correct class to the clicked choice
@@ -119,14 +120,14 @@ choices.forEach((choice) => {
 
     setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
-      // Remove the correct highlight if the answer was wrong
-      if (classToApply === "incorrect") {
-        choices.forEach((choice) => choice.parentElement.classList.remove("correct"));
-      }
+      // Remove correct highlight if the answer was wrong
+      choices.forEach((choice) => choice.parentElement.classList.remove("correct"));
+      
       getNewQuestion(); // Move to next question
     }, 1000);
   });
 });
+
 
 
 // Function to increment and update score
