@@ -26,6 +26,8 @@ body {
   position: absolute;
   top: 40%;
   left: 50%;
+  display: flex;
+  flex-direction: column;
   transition: 0.2s;
 }
 .question {
@@ -109,8 +111,7 @@ body {
   -moz-transform: translate(-100%, -240%);
 }
 .cute-gif{
-  position: relative;
-  right: -85px;
+  align-self: center;
 }
 
 .cssload-main * {
