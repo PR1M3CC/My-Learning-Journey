@@ -7,8 +7,12 @@ const noBtn = document.querySelector(".js-no-btn");
 
 // Change the position of the "No" button randomly
 noBtn.addEventListener("mouseover", () => {
-  const newX = Math.floor(Math.random() * (questionContainer.offsetWidth - noBtn.offsetWidth));
-  const newY = Math.floor(Math.random() * (questionContainer.offsetHeight - noBtn.offsetHeight));
+  const newX = Math.floor(
+    Math.random() * (questionContainer.offsetWidth - noBtn.offsetWidth)
+  );
+  const newY = Math.floor(
+    Math.random() * (questionContainer.offsetHeight - noBtn.offsetHeight)
+  );
 
   noBtn.style.position = "absolute"; // Make sure it can move
   noBtn.style.left = `${newX}px`;

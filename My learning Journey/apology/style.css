@@ -90,7 +90,7 @@ body {
   font-size: 3.2rem;
   text-align: center;
 }
-.apology{
+.apology {
   font-size: 20px;
   font-style: italic;
   font-weight: 700;
@@ -110,7 +110,7 @@ body {
   -webkit-transform: translate(-100%, -240%);
   -moz-transform: translate(-100%, -240%);
 }
-.cute-gif{
+.cute-gif {
   align-self: center;
 }
 
