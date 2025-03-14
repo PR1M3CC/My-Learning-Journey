@@ -106,7 +106,7 @@ choices.forEach((choice) => {
     let classToApply = "incorrect";
     if (selectedAnswer == currentQuestion.answer) {
       classToApply = "correct";
-      incrementScore(CORRECT_BONUS); // ✅ Increase score only when correct
+      incrementScore(CORRECT_BONUS); // Increase score only when correct
     } else {
       // Find the correct choice and apply the 'correct' class
       const correctChoice = choices.find(
