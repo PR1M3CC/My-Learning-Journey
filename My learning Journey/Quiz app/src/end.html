@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body
+    class="bg-blue-100 font-sans flex justify-center items-center h-screen flex-col"
+  >
+    <h1 id="finalScore" class="score mb-6 text-blue-500 font-semibold text-6xl">
+      
+    </h1>
+    <form class="flex flex-col justify-center items-center">
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="username"
+        class="bg-white mb-5 py-3 hover:shadow-md shadow-blue-500 placeholder:font-semibold transition-all duration-300 placeholder:text-lg p-2 w-[220px]"
+      />
+      <button
+        type="submit"
+        class="bg-blue-50 p-2 border-blue-400 mb-2 border-2 w-[220px] text-center hover:bg-blue-300 transition-all duration-300 hover:cursor-pointer hover:text-white text-blue-500 font-semibold text-lg hover:shadow-md shadow-blue-500 disabled:cursor-not-allowed"
+        id="saveScoreBtn"
+        onclick="saveHighScore(event)"
+        disabled
+      >
+        Save
+      </button>
+    </form>
+    <a
+      href="game.html"
+      class="bg-blue-50 p-2 hover:shadow-md shadow-blue-500 border-blue-400 border-2 w-[220px] text-center hover:bg-blue-300 mb-2 transition-all duration-300 hover:text-white text-blue-500 font-semibold text-lg"
+      >Play Again</a
+    >
+    <a
+      href="index.html"
+      class="bg-blue-50 p-2 hover:shadow-md shadow-blue-500 border-blue-400 border-2 w-[220px] text-center hover:bg-blue-300 transition-all duration-300 hover:text-white text-blue-500 font-semibold text-lg"
+      >Go home</a
+    >
+    <script src="end.js"></script>
+  </body>
+</html>
