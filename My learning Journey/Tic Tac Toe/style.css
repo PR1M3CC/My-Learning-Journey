@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  height: 100vh;
+  background-color: rgb(250, 210, 216);
+}
+.cell {
+  width: 75px;
+  height: 75px;
+  border: 2px solid;
+  box-shadow: 0 0 0 2px;
+  line-height: 75px;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+#gameContainer {
+  font-family: "Permanent Marker", cursive;
+  text-align: center;
+  margin: auto;
+}
+
+#cellContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 225px;
+  margin: auto;
+  margin-bottom: 12px;
+}
+#restartBtn{
+  width: 70px;
+  border: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  background-color: blueviolet;
+  border-radius: 8px;
+}
