@@ -8,7 +8,6 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 
 // Defining Rules for the game
-const maxQuestions = 10;
 const Bonus = 10;
 
 // Declaring variables for the game
@@ -21,7 +20,16 @@ let questions = [];
 
 // Fetching questions from Open Trivia Database
 function fetchQuestions(attempts = 3) {
-  fetch("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple")
+  // Retrieve values from localStorage
+  const amount = localStorage.getItem("quizAmount") || 10;
+  const category = localStorage.getItem("quizCategory");
+  const difficulty = localStorage.getItem("quizDifficulty");
+
+  // Build API URL based on selected options
+  let apiUrl = `https://opentdb.com/api.php?amount=${amount}&type=multiple`;
+  if (category) apiUrl += `&category=${category}`;
+  if (difficulty) apiUrl += `&difficulty=${difficulty}`;
+  fetch(apiUrl)
     .then(function (response) {
       if (!response.ok) {
         return Promise.reject("Error: " + response.status);
@@ -52,6 +60,7 @@ function fetchQuestions(attempts = 3) {
       }
     });
 }
+let maxQuestions = parseInt(localStorage.getItem("quizAmount")) || 10;
 
 // Function to show an error message
 function showErrorMessage() {

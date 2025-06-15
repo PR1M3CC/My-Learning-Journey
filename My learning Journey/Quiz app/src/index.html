@@ -5,17 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flash Quiz</title>
     <link rel="stylesheet" href="output.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body class="bg-blue-100 font-sans">
     <div class="flex justify-center items-center h-screen">
       <div class="gap-4 flex-col flex items-center">
         <h1 class="text-7xl mb-5 text-blue-500 font-semibold">Flash Quiz</h1>
+
+        <!-- Amount -->
+        <select id="amount" class="p-2 border-2 border-blue-400 bg-blue-50 w-[180px] text-blue-500 font-semibold">
+          <option value="5">5 Questions</option>
+          <option value="10">10 Questions</option>
+          <option value="15">15 Questions</option>
+          <option value="20">20 Questions</option>
+        </select>
+
+        <!-- Category -->
+        <select id="category" class="p-2 border-2 border-blue-400 bg-blue-50 w-[180px] text-blue-500 font-semibold">
+          <option value="">Any Category</option>
+          <option value="9">General Knowledge</option>
+          <option value="18">Science: Computers</option>
+          <option value="23">History</option>
+          <option value="21">Sports</option>
+        </select>
+
+        <!-- Difficulty -->
+        <select id="difficulty" class="p-2 border-2 border-blue-400 bg-blue-50 w-[180px] text-blue-500 font-semibold">
+          <option value="">Any Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <!-- Play Button -->
         <a
+          id="playBtn"
           class="bg-blue-50 p-2 border-blue-400 border-2 w-[180px] text-center hover:bg-blue-300 transition-colors duration-500 hover:text-white text-blue-500 font-semibold text-lg"
           href="game.html"
           >Play</a
         >
+
+        <!-- High Scores -->
         <a
           class="bg-blue-50 p-2 border-blue-400 border-2 w-[180px] text-center hover:bg-blue-300 transition-colors duration-500 hover:text-white text-blue-500 font-semibold text-lg"
           href="highscores.html"
@@ -23,5 +53,31 @@
         >
       </div>
     </div>
+
+    <!-- Script to Save + Restore Options -->
+    <script>
+      const amountEl = document.getElementById("amount");
+      const categoryEl = document.getElementById("category");
+      const difficultyEl = document.getElementById("difficulty");
+      const playBtn = document.getElementById("playBtn");
+
+      // 🔁 Restore from localStorage
+      window.addEventListener("DOMContentLoaded", () => {
+        const storedAmount = localStorage.getItem("quizAmount");
+        const storedCategory = localStorage.getItem("quizCategory");
+        const storedDifficulty = localStorage.getItem("quizDifficulty");
+
+        if (storedAmount) amountEl.value = storedAmount;
+        if (storedCategory) categoryEl.value = storedCategory;
+        if (storedDifficulty) difficultyEl.value = storedDifficulty;
+      });
+
+      // ✅ Save to localStorage on Play
+      playBtn.addEventListener("click", () => {
+        localStorage.setItem("quizAmount", amountEl.value);
+        localStorage.setItem("quizCategory", categoryEl.value);
+        localStorage.setItem("quizDifficulty", difficultyEl.value);
+      });
+    </script>
   </body>
 </html>
