@@ -66,7 +66,7 @@ function App() {
               readOnly
             />
             <button
-              className="outline-none bg-blue-700 hover:cursor-pointer hover:bg-blue-400 text-white px-3 py-0.5 shrink-0"
+              className="outline-none bg-blue-700 hover:cursor-pointer hover:bg-blue-400 transition-all duration-200 hover:scale-105 active:scale-95 text-white px-3 py-0.5 shrink-0"
               onClick={copyPasswordToClipboard} // copy password on click
             >
               copy
