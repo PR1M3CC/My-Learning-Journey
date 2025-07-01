@@ -75,7 +75,6 @@ function App() {
 
           {/* Controls section: slider + checkboxes */}
           <div className="flex text-sm gap-x-2">
-
             {/* Length slider */}
             <div className="flex items-center gap-x-1">
               <input
@@ -116,7 +115,6 @@ function App() {
               />
               <label htmlFor="characterInput">Characters</label>
             </div>
-
           </div>
         </div>
       </div>
