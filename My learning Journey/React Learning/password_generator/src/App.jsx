@@ -53,7 +53,7 @@ function App() {
     <>
       <div className="flex items-center justify-center h-screen">
         <div className="w-full max-w-md mx-auto rounded-lg shadow-md px-5 py-4 text-orange-500 bg-gray-700">
-          <h1 className="text-white text-center my-3">Password Generator</h1>
+          <h1 className="text-white text-lg font-bold text-center my-3">Password Generator</h1>
 
           {/* Password display + Copy button */}
           <div className="flex shadow rounded-lg overflow-hidden mb-4">
