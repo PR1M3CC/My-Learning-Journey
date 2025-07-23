@@ -1,7 +1,7 @@
 import React from "react";
-import { useTodo } from "./src/context";
-import TodoForm from "./src/components/TodoForm";
-import TodoItem from "./src/components/TodoItem";
+import { useTodo } from "./context";
+import TodoForm from "./components/TodoForm";
+import TodoItem from "./components/TodoItem";
 
 function Wrapper() {
   const { todos } = useTodo();
